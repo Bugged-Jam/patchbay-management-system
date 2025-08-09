@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk, Frame
 from tkinter import messagebox
 from typing import Callable
+import os.path
 
 from PIL import Image,ImageTk
 import sys
@@ -333,7 +334,7 @@ class Engine:
 
 #region Background Renderer
 try:
-    _image = Image.open("code\\Tile (900x900).png")
+    _image = Image.open(os.path.join(os.path.dirname(__file__), "Tile (900x900).png"))
 except FileNotFoundError:
     print("Background image not found.")
     messagebox.showerror("Error", "Could not find 'Tile (900x900).png'. Please make sure the file exists.")
